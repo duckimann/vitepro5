@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  webserver:
+    image: httpd
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+    volumes:
+      - ./dist/:/usr/local/apache2/htdocs/
